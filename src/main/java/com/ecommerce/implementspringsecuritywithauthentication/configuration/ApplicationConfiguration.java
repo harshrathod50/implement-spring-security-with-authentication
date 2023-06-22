@@ -38,7 +38,7 @@ public class ApplicationConfiguration {
   @Bean
   SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests((authorize) -> {
-      authorize.anyRequest().authenticated();
+      authorize.anyRequest().permitAll();
     }).formLogin(withDefaults()).httpBasic(withDefaults());
     return http.build();
   }
